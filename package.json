@@ -28,7 +28,7 @@
     "test": "eslint -c .eslintrc app tests webpack.config.js && tape tests/*.test.js | tap-difflet && npm run build",
     "start": "static -a 0.0.0.0",
     "build": "webpack --progress --colors",
-    "build-watch": "webpack-dev-server --progress --colors"
+    "build-watch": "webpack-dev-server --host 0.0.0.0 --progress --colors"
   },
   "repository": {
     "type": "git",
