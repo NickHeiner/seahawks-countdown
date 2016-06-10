@@ -13,15 +13,23 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                excluder: /node_modules/,
+                exclude: /node_modules/,
                 loader: "babel-loader",
                 query: { presets: ["es2015"]}
             },
             {
                 test: /\.scss$/,
                 loaders: ["style", "css", "postcss", "sass"]
+            },
+            {
+                test: /\.json$/,
+                loaders: ["json-loader"]
             }
-        ]
+        ],
+        noParse: [/foundation-apps/, /lodash/, /angular.js$/]
+    },
+    resolve: {
+        extensions: ['', '.json', '.js']
     },
     sassLoader: {
         includePaths: [path.join(__dirname, "node_modules", "foundation-apps", "scss" )]
