@@ -127,7 +127,9 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
         }
     ];
 
-    $scope.nextGame = _.find($scope.games, game => moment.tz(game.date, "YYYY-MM-DD hh:mm a", "America/Los_Angeles").isAfter());
+    $scope.nextGame = _.find($scope.games, game => moment.tz(game.date, "YYYY-MM-DD hh:mm a", "America/Los_Angeles")
+        .isAfter());
+    $scope.nextGame.formattedDate = moment($scope.nextGame.date, "YYYY-MM-DD hh:mm a").format("dddd, MMMM Do YYYY, hh:mm a");
 });
 
 require("../index.scss");
