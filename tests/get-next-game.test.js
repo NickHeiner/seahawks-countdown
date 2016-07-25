@@ -172,4 +172,19 @@ test("getNextGame", t => {
             "the correct game is returned when no current date is passed"
         );
     });
+
+    t.test("there is no game in the future", t => {
+        t.plan(1);
+
+        try {
+            getNextGame(games, "2017-01-01 8:00 pm");
+            t.fail("getNextGame should have thrown an error since there is no game in the future");
+        } catch (error) {
+            t.equal(
+                error.currentDate,
+                "2017-01-01 8:00 pm",
+                "getNextGame throws the correct error when there is no game in the future"
+            );
+        }
+    });
 });
