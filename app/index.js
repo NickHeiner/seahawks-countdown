@@ -1,7 +1,8 @@
 "use strict";
 const angular = require("angular");
-const _ = require("lodash");
-const moment = require("moment-timezone");
+
+const getNextGame = require("./get-next-game");
+const calculateDifference = require("./calculate-difference");
 
 angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdownCtrl", function($scope) {
     $scope.games = [
@@ -120,16 +121,15 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
             preSeason: false
         },
         {
-            opponent: "Oakland Raiders",
+            opponent: "San Francisco 49ers",
             date: "2017-01-01 1:25 pm",
             location: "Levi's Stadium",
             preSeason: false
         }
     ];
 
-    $scope.nextGame = _.find($scope.games, game => moment.tz(game.date, "YYYY-MM-DD hh:mm a", "America/Los_Angeles")
-        .isAfter());
-    $scope.nextGame.formattedDate = moment($scope.nextGame.date, "YYYY-MM-DD hh:mm a").format("dddd, MMMM Do YYYY, hh:mm a");
+    $scope.nextGame = getNextGame($scope.games);
+    $scope.countdown = calculateDifference($scope.nextGame.formattedDate);
 });
 
 require("../index.scss");
