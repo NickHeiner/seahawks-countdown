@@ -14,7 +14,7 @@ test("calcDiff", t => {
 
                 t.equal(
                     calculateDifference(futureDate).days,
-                    3,
+                    "03",
                     "the correct number of days are returned when there are days between the future date and now"
                 );
             });
@@ -26,7 +26,7 @@ test("calcDiff", t => {
 
                 t.equal(
                     calculateDifference(tomorrow).days,
-                    0,
+                    "00",
                     "the correct number of days are returned when there are no days between the future date and now"
                 );
             });
@@ -40,7 +40,7 @@ test("calcDiff", t => {
 
                 t.equal(
                     calculateDifference(futureDate).hours,
-                    7,
+                    "07",
                     "the correct number of hours are returned when there are hours between the future date and now"
                 );
             });
@@ -52,7 +52,7 @@ test("calcDiff", t => {
 
                 t.equal(
                     calculateDifference(futureDate).hours,
-                    0,
+                    "00",
                     "the correct number of hours are returned when there are no hours between the future date and now"
                 );
             });
@@ -66,7 +66,7 @@ test("calcDiff", t => {
 
                 t.equal(
                     calculateDifference(futureDate).minutes,
-                    8,
+                    "08",
                     "the correct number of minutes are returned when there are minutes between the future date and now"
                 );
 
@@ -79,7 +79,7 @@ test("calcDiff", t => {
 
                 t.equal(
                     calculateDifference(futureDate).minutes,
-                    0,
+                    "00",
                     "the correct number of mins are returned when there are no minutes between the future date and now"
                 );
 
@@ -94,7 +94,7 @@ test("calcDiff", t => {
 
                 t.equal(
                     calculateDifference(futureDate).seconds,
-                    45,
+                    "45",
                     "the correct number of seconds are returned when there are seconds between the future date and now"
                 );
             });
@@ -106,7 +106,7 @@ test("calcDiff", t => {
 
                 t.equal(
                     calculateDifference(futureDate).seconds,
-                    0,
+                    "00",
                     "the correct number of secs are returned when there are no seconds between the future date and now"
                 );
             });

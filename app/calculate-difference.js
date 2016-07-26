@@ -1,5 +1,6 @@
 "use strict";
 const moment = require("moment");
+const formatCountdown = require("./format-countdown");
 
 function calculateDifference(nextGameDate) {
     const now = moment();
@@ -23,7 +24,7 @@ function calculateDifference(nextGameDate) {
     difference.seconds = gameDate.subtract(difference.minutes, "minutes")
         .diff(now, "seconds");
 
-    return difference;
+    return formatCountdown(difference);
 }
 
 module.exports = calculateDifference;
