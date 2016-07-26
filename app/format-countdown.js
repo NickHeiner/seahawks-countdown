@@ -1,9 +1,9 @@
-// "use strict";
+"use strict";
 
-// const _ = require("lodash");
+const _ = require("lodash");
 
-// function formatCountdown(countdown) {
+function formatCountdown(countdown) {
+    _forEach()
+}
 
-// }
-
-// module.exports = formatCountdown;
+module.exports = formatCountdown;

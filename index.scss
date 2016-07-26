@@ -2,16 +2,30 @@
 
 $breakpoints: map-merge($breakpoints, (large: 1025px));
 
-.grid-frame {
-    background-color: #00295b;
+body {
+    background-image: url("/img/space-needle-cropped.jpg");
+    background-repeat: round;
 }
 
-h1, p, h4 {
+// .grid-frame {
+//     background-color: #00295b;
+// }
+
+h1, h4, p {
     color: #999;
 }
 
 .bottom {
     margin-bottom: 0;
-}
 
-// #69bd28
+    &.title-bar {
+        padding-bottom: .25em;
+        padding-top: .25em;
+        background-color: #00295b;
+        color: #999;
+        
+        & a {
+            color: #69bd28;
+        }
+    }
+}
