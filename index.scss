@@ -1,4 +1,5 @@
 @import "foundation";
+@import url(https://fonts.googleapis.com/css?family=Kanit:400,800,700);
 
 $breakpoints: map-merge($breakpoints, (large: 1025px));
 
@@ -11,8 +12,10 @@ body {
 //     background-color: #00295b;
 // }
 
-h1, h4, p {
+h1, h2, p {
     color: #999;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700;
 }
 
 .bottom {
@@ -22,11 +25,23 @@ h1, h4, p {
         padding-bottom: .25em;
         padding-top: .25em;
         background-color: #00295b;
-        color: #999;
         border: none;
+
+        & p {
+            font-weight: 400;
+        }
         
         & a {
             color: #69bd28;
         }
     }
+}
+
+.countdown p {
+    color: #69bd28;
+    font-size: 3em;
+}
+
+.labels p {
+    font-size: 2em;
 }
