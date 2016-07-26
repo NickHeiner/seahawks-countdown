@@ -4,18 +4,18 @@
 $breakpoints: map-merge($breakpoints, (large: 1025px));
 
 body {
-    background-image: url("/img/space-needle-cropped.jpg");
+    background-image: url("/img/space-needle-contrast.jpg");
     background-repeat: round;
 }
-
-// .grid-frame {
-//     background-color: #00295b;
-// }
 
 h1, h2, p {
     color: #999;
     font-family: 'Kanit', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
+    .game-info & {
+        font-size: 1.75em;
+        color: #69bd28;
+    }
 }
 
 .bottom {
@@ -39,7 +39,7 @@ h1, h2, p {
 
 .countdown p {
     color: #69bd28;
-    font-size: 3em;
+    font-size: 5em;
 }
 
 .labels p {
