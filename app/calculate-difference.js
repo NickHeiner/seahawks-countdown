@@ -21,7 +21,6 @@ function calculateDifference(nextGameDate) {
     difference.seconds = gameDate.subtract(difference.minutes, "minutes")
         .diff(now, "seconds");
 
-    debugger;
     return difference;
 }
 

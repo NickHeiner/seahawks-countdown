@@ -130,6 +130,17 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
 
     $scope.nextGame = getNextGame($scope.games);
     $scope.countdown = calculateDifference($scope.nextGame.formattedDate);
+    function updateTime() {
+        requestAnimationFrame(updateTime);
+        if (!$scope.$$phase) {
+            $scope.$apply(() => $scope.countdown = calculateDifference($scope.nextGame.formattedDate));
+        } else {
+            $scope.countdown = calculateDifference($scope.nextGame.formattedDate);
+        }
+    }
+    
+    updateTime();
+
 });
 
 require("../index.scss");
