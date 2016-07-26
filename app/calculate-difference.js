@@ -3,7 +3,7 @@ const moment = require("moment");
 
 function calculateDifference(nextGameDate) {
     const now = moment();
-    const gameDate = moment.isMoment(nextGameDate) ? nextGameDate : nextGameDate.moment();
+    const gameDate = moment.isMoment(nextGameDate) ? nextGameDate : moment(nextGameDate, "dddd, MMMM Do YYYY, hh:mm a");
 
     if (gameDate.diff(now) < 0) {
         const err = new Error("There is no game in the future");
@@ -21,6 +21,7 @@ function calculateDifference(nextGameDate) {
     difference.seconds = gameDate.subtract(difference.minutes, "minutes")
         .diff(now, "seconds");
 
+    debugger;
     return difference;
 }
 
