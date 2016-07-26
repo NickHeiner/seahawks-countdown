@@ -2,9 +2,12 @@
 const _ = require("lodash");
 const moment = require("moment-timezone");
 
-function getNextGame(games, currentDate) {
+function getNextGame(allGames, preseason, currentDate) {
     const now = currentDate ? moment.tz(currentDate, "YYYY-MM-DD hh:mm a", "America/Los_Angeles") : undefined; 
-    const nextGame =  _.find(games, game => moment.tz(game.date, "YYYY-MM-DD hh:mm a", "America/Los_Angeles")
+    
+    const subsetGames = preseason ? allGames : _.filter(allGames, {"preSeason": false});
+
+    const nextGame =  _.find(subsetGames, game => moment.tz(game.date, "YYYY-MM-DD hh:mm a", "America/Los_Angeles")
         .isAfter(now));
 
     if (!nextGame) {

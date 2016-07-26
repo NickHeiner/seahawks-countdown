@@ -136,7 +136,7 @@ test("getNextGame", t => {
             formattedDate: "Saturday, August 13th 2016, 01:30 pm"
         };
         
-        t.deepEqual(getNextGame(games), nextGame, "the correct game is returned when no current date is passed");
+        t.deepEqual(getNextGame(games, true), nextGame, "the correct game is returned when no current date is passed");
     });
 
     t.test("works for a game in the middle", t => {
@@ -150,7 +150,7 @@ test("getNextGame", t => {
         };
         
         t.deepEqual(
-            getNextGame(games, "2016-09-08 3:00 pm"),
+            getNextGame(games, true, "2016-09-08 3:00 pm"),
             nextGame,
             "the correct game is returned when a current date in future is passed"
         );
@@ -167,7 +167,7 @@ test("getNextGame", t => {
         };
         
         t.deepEqual(
-            getNextGame(games, "2017-01-01 3:00 am"),
+            getNextGame(games, true, "2017-01-01 3:00 am"),
             nextGame,
             "the correct game is returned when no current date is passed"
         );
@@ -177,7 +177,7 @@ test("getNextGame", t => {
         t.plan(1);
 
         try {
-            getNextGame(games, "2017-01-01 8:00 pm");
+            getNextGame(games, true, "2017-01-01 8:00 pm");
             t.fail("getNextGame should have thrown an error since there is no game in the future");
         } catch (error) {
             t.equal(

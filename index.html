@@ -37,23 +37,23 @@
                             <p>{{countdown.seconds}}</p>
                         </div>
                     </div>
-                    <div class="grid-block labels">
-                        <div class="small-3 grid-block">
+                    <div class="grid-block labels align-spaced">
+                        <div class="small-2 grid-block">
                             <div class="grid-container">
                                 <p>Days</p>
                             </div>
                         </div>
-                        <div class="small-3 grid-block">
+                        <div class="small-2 grid-block">
                             <div class="grid-container">
                                 <p>Hours</p>
                             </div>
                         </div>
-                        <div class="small-3 grid-block">
+                        <div class="small-2 grid-block">
                             <div class="grid-container">
                                 <p>Minutes</p>
                             </div>
                         </div>
-                        <div class="small-3 grid-block">
+                        <div class="small-2 grid-block">
                             <div class="grid-container">
                                 <p>Seconds</p>
                             </div>
@@ -70,6 +70,12 @@
                         <p class="text-center">Seattle Seahawks vs. {{nextGame.opponent}}</p>
                         <p class="text-center">{{nextGame.formattedDate}} PST</p>
                         <p class="text-center">{{nextGame.location}}</p>
+                    </div>
+                </div>
+                <div class="small-12 grid-block">
+                    <div class="grid-block">
+                        <input id="preseasonGames" type="checkbox" ng-model="settings.preseason">
+                        <label for="preseasonGames">Include preseason games?</label>
                     </div>
                 </div>
                 <div class="align-bottom small-12 grid-block title-bar v-align bottom">
