@@ -1,8 +1,9 @@
 "use strict";
 const moment = require("moment");
 const formatCountdown = require("./format-countdown");
+const _ = require("lodash");
 
-function calculateDifference(nextGameDate) {
+function calculateDifference(nextGameDate, countdownUnits) {
     const now = moment();
     const gameDate = moment.isMoment(nextGameDate) ?
         nextGameDate :
@@ -14,10 +15,12 @@ function calculateDifference(nextGameDate) {
         throw err;
     }
 
-    const difference =  {
-        days: gameDate.diff(now, "days")
-    };
+    const allUnits = ["days", "hours", "minutes", "seconds"];
+    const firstUnitIndex = _.findIndex(allUnits, unit => unit === countdownUnits);
+    const units = _.slice(allUnits, firstUnitIndex);
 
+    const difference =  {};
+    difference.days = gameDate.diff(now, "days");
     difference.hours = gameDate.subtract(difference.days, "days").diff(now, "hours");
     difference.minutes = gameDate.subtract(difference.hours, "hours")
         .diff(now, "minutes");

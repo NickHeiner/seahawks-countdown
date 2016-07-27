@@ -77,6 +77,17 @@
                         <input id="preseasonGames" type="checkbox" ng-model="settings.preseason">
                         <label for="preseasonGames">Include preseason games?</label>
                     </div>
+                    <div class="grid-block">
+                        <label>Show time until next game in: </label>
+                        <input type="radio" name="units" value="days" id="daysUnits" ng-model="settings.units">
+                        <label for="daysUnits">Days</label>
+                        <input type="radio" name="units" value="hours" id="hoursUnits" ng-model="settings.units">
+                        <label for="hoursUnits">Hours</label>
+                        <input type="radio" name="units" value="minutes" id="minutesUnits" ng-model="settings.units">
+                        <label for="minutesUnits">Minutes</label>
+                        <input type="radio" name="units" value="seconds" id="secondsUnits" ng-model="settings.units">
+                        <label for="secondsUnits">Seconds</label>
+                    </div>
                 </div>
                 <div class="align-bottom small-12 grid-block title-bar v-align bottom">
                     <div class="small-4 grid-block">

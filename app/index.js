@@ -129,23 +129,26 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
     ];
 
     $scope.settings = {
-        preseason: true
+        preseason: true,
+        units: "days"
     };
 
     $scope.nextGame = getNextGame($scope.games, $scope.settings.preseason);
-    $scope.countdown = calculateDifference($scope.nextGame.formattedDate);
+    $scope.countdown = calculateDifference($scope.nextGame.formattedDate, $scope.settings.units);
 
     $scope.$watch("settings", () => {
         $scope.nextGame = getNextGame($scope.games, $scope.settings.preseason);
-        $scope.countdown = calculateDifference($scope.nextGame.formattedDate);
+        $scope.countdown = calculateDifference($scope.nextGame.formattedDate, $scope.settings.units);
     }, true);
 
     function updateTime() {
         requestAnimationFrame(updateTime);
         if (!$scope.$$phase) {
-            $scope.$apply(() => $scope.countdown = calculateDifference($scope.nextGame.formattedDate));
+            $scope.$apply(
+                () => $scope.countdown = calculateDifference($scope.nextGame.formattedDate, $scope.settings.units)
+            );
         } else {
-            $scope.countdown = calculateDifference($scope.nextGame.formattedDate);
+            $scope.countdown = calculateDifference($scope.nextGame.formattedDate, $scope.settings.units);
         }
     }
     
