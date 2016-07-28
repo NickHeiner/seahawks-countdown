@@ -20,12 +20,15 @@ function calculateDifference(nextGameDate, countdownUnits) {
     const units = _.slice(allUnits, firstUnitIndex);
 
     const difference =  {};
-    difference.days = gameDate.diff(now, "days");
-    difference.hours = gameDate.subtract(difference.days, "days").diff(now, "hours");
-    difference.minutes = gameDate.subtract(difference.hours, "hours")
-        .diff(now, "minutes");
-    difference.seconds = gameDate.subtract(difference.minutes, "minutes")
-        .diff(now, "seconds");
+
+    _.forEach(units, (unit, index) => {
+        if (index === 0) {
+            difference[unit] = gameDate.diff(now, unit);
+        } else {
+            const previousUnit = units[index - 1];
+            difference[unit] = gameDate.subtract(difference[previousUnit], previousUnit).diff(now, unit);
+        }
+    });
 
     return formatCountdown(difference);
 }

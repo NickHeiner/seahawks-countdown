@@ -15,45 +15,45 @@
                 </div>
                 <div class="vertical small-12 grid-block">
                     <div class="grid-block countdown align-spaced">
-                        <div class="grid-block small-2 align-center">
+                        <div class="grid-block small-2 align-center" ng-show="countdown.days">
                             <p>{{countdown.days}}</p>
                         </div>
-                        <div class="grid-block small-1 align-center">
+                        <div class="grid-block small-1 align-center" ng-show="countdown.days">
                             <p>:</p>
                         </div>
-                        <div class="grid-block small-2 align-center">
+                        <div class="grid-block small-2 align-center" ng-show="countdown.hours">
                             <p>{{countdown.hours}}</p>
                         </div>
-                        <div class="grid-block small-1 align-center">
+                        <div class="grid-block small-1 align-center" ng-show="countdown.hours">
                             <p>:</p>
                         </div>
-                        <div class="grid-block small-2 align-center">
+                        <div class="grid-block small-2 align-center" ng-show="countdown.minutes">
                             <p>{{countdown.minutes}}</p>
                         </div>
-                        <div class="grid-block small-1 align-center">
+                        <div class="grid-block small-1 align-center" ng-show="countdown.minutes">
                             <p>:</p>
                         </div>
-                        <div class="grid-block small-2 align-center">
+                        <div class="grid-block small-2 align-center" ng-show="countdown.seconds">
                             <p>{{countdown.seconds}}</p>
                         </div>
                     </div>
                     <div class="grid-block labels align-spaced">
                         <div class="small-2 grid-block">
-                            <div class="grid-container">
+                            <div class="grid-container" ng-show="countdown.days">
                                 <p>Days</p>
                             </div>
                         </div>
-                        <div class="small-2 grid-block">
+                        <div class="small-2 grid-block" ng-show="countdown.hours">
                             <div class="grid-container">
                                 <p>Hours</p>
                             </div>
                         </div>
-                        <div class="small-2 grid-block">
+                        <div class="small-2 grid-block" ng-show="countdown.minutes">
                             <div class="grid-container">
                                 <p>Minutes</p>
                             </div>
                         </div>
-                        <div class="small-2 grid-block">
+                        <div class="small-2 grid-block" ng-show="countdown.seconds">
                             <div class="grid-container">
                                 <p>Seconds</p>
                             </div>
@@ -79,17 +79,17 @@
                     </div>
                     <div class="grid-block small-8">
                         <div class="grid-block small-4 small-offset-1">
-                        <label for="units">Show time until next game in:</label>
+                            <label for="units">Show time until next game in:</label>
                         </div>
                         <div class="grid-block small-7">
-                        <input type="radio" name="units" value="days" id="daysUnits" ng-model="settings.units">
-                        <label for="daysUnits">Days</label>
-                        <input type="radio" name="units" value="hours" id="hoursUnits" ng-model="settings.units">
-                        <label for="hoursUnits">Hours</label>
-                        <input type="radio" name="units" value="minutes" id="minutesUnits" ng-model="settings.units">
-                        <label for="minutesUnits">Minutes</label>
-                        <input type="radio" name="units" value="seconds" id="secondsUnits" ng-model="settings.units">
-                        <label for="secondsUnits">Seconds</label>
+                            <input type="radio" name="units" value="days" id="daysUnits" ng-model="settings.units">
+                            <label for="daysUnits">Days</label>
+                            <input type="radio" name="units" value="hours" id="hoursUnits" ng-model="settings.units">
+                            <label for="hoursUnits">Hours</label>
+                            <input type="radio" name="units" value="minutes" id="minutesUnits" ng-model="settings.units">
+                            <label for="minutesUnits">Minutes</label>
+                            <input type="radio" name="units" value="seconds" id="secondsUnits" ng-model="settings.units">
+                            <label for="secondsUnits">Seconds</label>
                         </div>
                     </div>
                 </div>
