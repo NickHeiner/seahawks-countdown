@@ -3,19 +3,33 @@
 
 $breakpoints: map-merge($breakpoints, (large: 1025px));
 
+$hawksGreen: #69bd28;
+$hawksBlue: #00295b;
+$gray: #999;
+
 body {
-    background-image: url("/img/space-needle-contrast.jpg");
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.5)), url("/img/space-needle-contrast.jpg");
     background-repeat: round;
 }
 
 h1, h2, p, label {
-    color: #999;
+    color: $gray;
     font-family: 'Kanit', sans-serif;
     font-weight: 600;
+
     .game-info & {
         font-size: 1.75em;
-        color: #69bd28;
+        color: $hawksBlue;
     }
+}
+
+h2 {
+    color: $hawksGreen;
+}
+
+label, input {
+    color: $hawksBlue;
+    font-size: 1.25em;
 }
 
 .bottom {
@@ -24,7 +38,7 @@ h1, h2, p, label {
     &.title-bar {
         padding-bottom: .25em;
         padding-top: .25em;
-        background-color: #00295b;
+        background-color: $hawksBlue;
         border: none;
 
         & p {
@@ -32,13 +46,13 @@ h1, h2, p, label {
         }
         
         & a {
-            color: #69bd28;
+            color: $hawksGreen;
         }
     }
 }
 
 .countdown p {
-    color: #69bd28;
+    color: $hawksGreen;
     font-size: 7em;
 }
 
