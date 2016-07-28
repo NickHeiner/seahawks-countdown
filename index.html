@@ -13,7 +13,10 @@
                         <h1 class="text-center">Seahawks Game Countdown</h1>
                     </div>
                 </div>
-                <div class="vertical small-12 grid-block">
+                <div class="small-12 grid-block align-spaced no-games" ng-hide="countdown">
+                    <p class="text-center">There are no currently scheduled Seahawks games.</p>
+                </div>
+                <div class="vertical small-12 grid-block" ng-show="countdown">
                     <div class="grid-block countdown align-spaced">
                         <div class="grid-block align-center" ng-show="countdown.days">
                             <p>{{countdown.days}}</p>
@@ -60,19 +63,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="small-12 grid-block">
+                <div class="small-12 grid-block" ng-show="countdown">
                     <div class="grid-container">
                         <h2 class="text-center">until the next Seahawks game</h2>
                     </div>
                 </div>
-                <div class="small-12 grid-block game-info">
+                <div class="small-12 grid-block game-info" ng-show="countdown">
                     <div class="grid-container">
                         <p class="text-center">Seattle Seahawks vs. {{nextGame.opponent}}</p>
                         <p class="text-center">{{nextGame.formattedDate}} PST</p>
                         <p class="text-center">{{nextGame.location}}</p>
                     </div>
                 </div>
-                <div class="small-12 grid-block">
+                <div class="small-12 grid-block" ng-show="countdown">
                     <div class="grid-block small-4">
                         <input id="preseasonGames" type="checkbox" ng-model="settings.preseason">
                         <label for="preseasonGames">Include preseason games?</label>

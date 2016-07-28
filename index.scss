@@ -21,6 +21,11 @@ h1, h2, p, label {
         font-size: 1.75em;
         color: $hawksBlue;
     }
+
+    .no-games & {
+        font-size: 5em;
+        color: $hawksGreen;
+    }
 }
 
 h2 {
