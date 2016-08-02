@@ -128,9 +128,17 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
         }
     ];
 
+    const colSizes = {
+        days: "small-2",
+        hours: "small-3",
+        minutes: "small-5",
+        seconds: "small-6"
+    };
+
     $scope.settings = {
         preseason: true,
-        units: "days"
+        units: "days",
+        colSize: colSizes.days
     };
 
     $scope.nextGame = getNextGame($scope.games, $scope.settings.preseason);
@@ -139,6 +147,7 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
     $scope.$watch("settings", () => {
         $scope.nextGame = getNextGame($scope.games, $scope.settings.preseason);
         $scope.countdown = calculateDifference($scope.nextGame.formattedDate, $scope.settings.units);
+        $scope.settings.colSize = colSizes[$scope.settings.units];
     }, true);
 
     function updateTime() {
@@ -153,7 +162,6 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
     }
     
     updateTime();
-
 });
 
 require("../index.scss");
