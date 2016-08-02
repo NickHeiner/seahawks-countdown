@@ -34,7 +34,11 @@ h2 {
 
 label, input {
     color: $hawksBlue;
-    font-size: 1.25em;
+    font-size: 2em;
+
+    @include breakpoint(large) {
+        font-size: 1.25em;
+    }
 }
 
 .bottom {
@@ -63,4 +67,8 @@ label, input {
 
 .labels p {
     font-size: 2em;
+}
+
+.preseason {
+    overflow: hidden;
 }
