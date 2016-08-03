@@ -132,7 +132,7 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
         days: "small-2",
         hours: "small-3",
         minutes: "small-5",
-        seconds: "small-6"
+        seconds: "small-12"
     };
 
     $scope.settings = {
