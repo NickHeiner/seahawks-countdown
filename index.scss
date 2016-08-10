@@ -15,6 +15,10 @@ body {
     min-height: 100%;
 }
 
+.grid-frame {
+    overflow:auto;
+}
+
 h1, h2, p, label {
     color: $gray;
     font-family: 'Kanit', sans-serif;
@@ -37,11 +41,7 @@ h2 {
 
 label, input {
     color: $hawksBlue;
-    font-size: 2em;
-
-    @include breakpoint(large) {
-        font-size: 1.25em;
-    }
+    font-size: 1.25em;
 }
 
 .bottom {
