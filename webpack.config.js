@@ -26,7 +26,7 @@ module.exports = {
                 loaders: ["json-loader"]
             }
         ],
-        noParse: [/foundation-apps/, /lodash/, /angular.js$/]
+        noParse: [/foundation-apps/, /lodash/, /angular.js$/, /moment.js$/]
     },
     resolve: {
         extensions: ['', '.json', '.js']
