@@ -91,12 +91,12 @@
                         <p class="text-center">{{nextGame.location}}</p>
                     </div>
                 </div>
-                <div class="small-12 grid-block vertical align-spaced large-horizontal" ng-if="countdown">
+                <div class="align-bottom small-12 grid-block title-bar v-align bottom">
                     <div class="grid-block small-align-center medium-align-spaced large-4 preseason">
                         <input id="preseasonGames" type="checkbox" ng-model="settings.preseason">
-                        <label for="preseasonGames">Include preseason games?</label>
+                        <label for="preseasonGames">Include preseason games?</label>                        
                     </div>
-                    <div class="grid-block align-spaced large-8">
+                    <div class="grid-block align-spaced large-8"">
                         <div class="grid-block small-4 small-offset-1">
                             <label for="units">Show time until next game in:</label>
                         </div>
@@ -109,15 +109,6 @@
                             <label for="minutesUnits">Minutes</label>
                             <input type="radio" name="units" value="seconds" id="secondsUnits" ng-model="settings.units">
                             <label for="secondsUnits">Seconds</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="align-bottom small-12 grid-block title-bar v-align bottom">
-                    <div class="small-4 grid-block">
-                    </div>
-                    <div class="align-bottom small-4 grid-block">
-                    </div>
-                    <div class="align-bottom small-4 grid-block">
                     </div>
                 </div>
             </div>
