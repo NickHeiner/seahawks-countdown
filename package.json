@@ -2,7 +2,7 @@
   "name": "seahawks-countdown",
   "version": "1.0.0",
   "description": "A web app with a timer counting down to the next Seahawks game",
-  "main": "index.js",
+  "main": "./app/index.js",
   "dependencies": {
     "angular": "^1.5.6",
     "foundation-apps": "^1.2.0",

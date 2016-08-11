@@ -1,5 +1,6 @@
 "use strict";
 const angular = require("angular");
+const _ = require("lodash");
 
 const getNextGame = require("./get-next-game");
 const calculateDifference = require("./calculate-difference");
@@ -137,17 +138,16 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
 
     $scope.settings = {
         preseason: true,
-        units: "days",
-        colSize: colSizes.days
+        units: "days"
     };
 
-    $scope.nextGame = getNextGame($scope.games, $scope.settings.preseason);
-    $scope.countdown = calculateDifference($scope.nextGame.formattedDate, $scope.settings.units);
+    const updateOnce = _.once(updateTime);
 
     $scope.$watch("settings", () => {
         $scope.nextGame = getNextGame($scope.games, $scope.settings.preseason);
         $scope.countdown = calculateDifference($scope.nextGame.formattedDate, $scope.settings.units);
         $scope.settings.colSize = colSizes[$scope.settings.units];
+        updateOnce();
     }, true);
 
     function updateTime() {
@@ -160,8 +160,6 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
             $scope.countdown = calculateDifference($scope.nextGame.formattedDate, $scope.settings.units);
         }
     }
-    
-    updateTime();
 });
 
 require("../index.scss");

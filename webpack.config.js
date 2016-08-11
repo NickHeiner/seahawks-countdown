@@ -3,7 +3,7 @@ const path = require("path");
 const autoprefixer = require("autoprefixer");
 
 module.exports = {
-    entry: path.join(__dirname, "app", "index.js"),
+    entry: require.resolve("./"),
     output: {
        path: path.join(__dirname, "dist"),
        filename: "built.js",
