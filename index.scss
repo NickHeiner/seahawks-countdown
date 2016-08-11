@@ -1,5 +1,5 @@
 @import "foundation";
-@import url(https://fonts.googleapis.com/css?family=Kanit:400,800,700);
+@import url(https://fonts.googleapis.com/css?family=Kanit:400,500,600,700,800);
 
 $breakpoints: map-merge($breakpoints, (large: 1025px));
 
@@ -8,18 +8,18 @@ $hawksBlue: #00295b;
 $gray: #999;
 
 body {
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 10%, rgba(255,255,255,0.5)) 100%, url("/img/space-needle-contrast.jpg");
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 10%, rgba(255,255,255,0.5)) 100%,
+        url("/img/space-needle-contrast.jpg");
     background-repeat: no-repeat, no-repeat;
     background-size: auto auto, cover;
     background-position: center, center;
-    min-height: 100%;
 }
 
 .grid-frame {
-    overflow:auto;
+    overflow: auto;
 }
 
-h1, h2, p, label {
+h2, p, label {
     color: $gray;
     font-family: 'Kanit', sans-serif;
     font-weight: 600;

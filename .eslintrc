@@ -27,6 +27,7 @@
         "no-multiple-empty-lines": "error",
         "key-spacing": "error",
         "semi": "error",
-        "space-before-blocks": "error"
+        "space-before-blocks": "error",
+        "quote-props": ["error", "as-needed"]
     }
 }

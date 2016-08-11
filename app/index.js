@@ -1,6 +1,7 @@
 "use strict";
 const angular = require("angular");
 const _ = require("lodash");
+const moment = require("moment");
 
 const getNextGame = require("./get-next-game");
 const calculateDifference = require("./calculate-difference");
@@ -144,7 +145,8 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
     const updateOnce = _.once(updateTime);
 
     $scope.$watch("settings", () => {
-        $scope.nextGame = getNextGame($scope.games, $scope.settings.preseason);
+        const currentDate = moment();
+        $scope.nextGame = getNextGame($scope.games, $scope.settings.preseason, currentDate);
         $scope.countdown = calculateDifference($scope.nextGame.formattedDate, $scope.settings.units);
         $scope.settings.colSize = colSizes[$scope.settings.units];
         updateOnce();
@@ -156,7 +158,7 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
         }
 
         requestAnimationFrame(updateTime);
-        
+
         if (!$scope.$$phase) {
             $scope.$apply(updateCountdown);
         } else {
