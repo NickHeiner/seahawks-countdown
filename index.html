@@ -9,6 +9,26 @@
     <body ng-app="seahawks-countdown" ng-controller="SeahawksCountdownCtrl">
         <div class="grid-frame">
             <div class="v-align small-up-1 grid-block">
+                <div>
+                    <span class="menu badge" zf-open="panel">?</span>
+                </div>
+                <div id="panel" zf-panel="" position="left">
+                    <div class="vertical grid-block">
+                        <a class="close-button float-right" zf-close="">×</a>
+                        <p>
+                            Full 2016 season <a href="http://www.seahawks.com/schedule" target="_blank">schedule</a>
+                        </p>
+                        <p>
+                            This is an app by <a href="https://github.com/KatherineThompson" target="_blank">Katherine Thompson</a>.
+                            Source code is available on <a href="https://github.com/KatherineThompson/seahawks-countdown" target="_blank">Github</a>.
+                        </p>
+                        <p>
+                            <a href="https://www.flickr.com/photos/aphid00/12263483273" target="_blank">"Seattle Space Needle lit up in Seahawks colors"</a>
+                            by <a href="https://www.flickr.com/photos/aphid00/" target="_blank">Dave Sizer</a>, used under
+                            <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC BY</a> / cropped and altered from original.
+                        </p>
+                    </div>
+                </div>
                 <div class="small-12 grid-block align-spaced no-games" ng-hide="countdown">
                     <p class="text-center">There are no currently scheduled Seahawks games.</p>
                 </div>
@@ -94,22 +114,10 @@
                 </div>
                 <div class="align-bottom small-12 grid-block title-bar v-align bottom">
                     <div class="small-4 grid-block">
-                        <p class="bottom">
-                            <a href="http://www.seahawks.com/schedule" target="_blank">Seahawks Season Schedule</a>
-                        </p>
                     </div>
                     <div class="align-bottom small-4 grid-block">
-                        <p class="text-center bottom">
-                            This is an app by <a href="https://github.com/KatherineThompson" target="_blank">Katherine Thompson</a>.
-                            Source code is available on <a href="https://github.com/KatherineThompson/seahawks-countdown" target="_blank">Github.</a>
-                        </p>
                     </div>
                     <div class="align-bottom small-4 grid-block">
-                        <p class="text-center bottom">
-                            <a href="https://www.flickr.com/photos/aphid00/12263483273" target="_blank">"Seattle Space Needle lit up in Seahawks colors"</a>
-                            by <a href="https://www.flickr.com/photos/aphid00/" target="_blank">Dave Sizer</a>, used under
-                            <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC BY</a> / cropped from original.
-                        </p>
                     </div>
                 </div>
             </div>

@@ -87,3 +87,28 @@ label, input {
 .preseason {
     overflow: hidden;
 }
+
+.menu {
+    background-color: $hawksBlue;
+    color: $hawksGreen;
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#panel {
+    background-color: $gray;
+    
+    p, .close-button {
+        color: $hawksBlue;
+    }
+
+    a {
+        color: $hawksGreen;
+    }
+
+    div.vertical {
+        margin-top: 1em;
+    }
+}
