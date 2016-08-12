@@ -1,6 +1,9 @@
 @import "foundation";
 @import url(https://fonts.googleapis.com/css?family=Kanit:400,500,600,700,800);
 
+$fa-font-path: "./fonts";
+@import "font-awesome";
+
 $breakpoints: map-merge($breakpoints, (large: 1025px));
 
 $hawksGreen: #69bd28;

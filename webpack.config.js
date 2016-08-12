@@ -24,7 +24,9 @@ module.exports = {
             {
                 test: /\.json$/,
                 loaders: ["json-loader"]
-            }
+            },
+            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
         ],
         noParse: [/foundation-apps/, /lodash/, /angular.js$/, /moment.js$/]
     },
@@ -32,7 +34,10 @@ module.exports = {
         extensions: ['', '.json', '.js']
     },
     sassLoader: {
-        includePaths: [path.join(__dirname, "node_modules", "foundation-apps", "scss" )]
+        includePaths: [
+            path.join(__dirname, "node_modules", "foundation-apps", "scss"),
+            path.join(__dirname, "node_modules", "font-awesome", "scss")
+        ]
     },
     postcss: [autoprefixer({browsers: ["last 3 versions"]})],
     devtool: "inline-source-map"
