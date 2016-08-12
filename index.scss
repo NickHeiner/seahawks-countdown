@@ -22,7 +22,7 @@ body {
     overflow: auto;
 }
 
-h2, p, label, input {
+h2, p, label, input, .unit-selector {
     color: $gray;
     font-family: 'Kanit', sans-serif;
     font-weight: 600;
@@ -35,6 +35,14 @@ h2, p, label, input {
     .no-games & {
         font-size: 5em;
         color: $hawksGreen;
+    }
+}
+
+.unit-selector {
+    font-weight: normal;
+
+    .selected {
+        font-weight: 600;
     }
 }
 
@@ -84,10 +92,6 @@ label, input {
     @include breakpoint(medium) {
         font-size: 2em;
     }
-}
-
-.preseason {
-    overflow: hidden;
 }
 
 .menu {

@@ -92,24 +92,18 @@
                     </div>
                 </div>
                 <div class="align-bottom small-12 grid-block title-bar bottom">
-                    <div class="grid-block preseason">
+                    <span class="left">
                         <input id="preseasonGames" type="checkbox" ng-model="settings.preseason">
-                        <label for="preseasonGames">Include preseason games?</label>                        
-                    </div>
-                    <div class="grid-block">
-                        <div class="grid-block small-4 small-offset-1">
-                            <label for="units">Show time until next game in:</label>
-                        </div>
-                        <div class="grid-block small-7">
-                            <input type="radio" name="units" value="days" id="daysUnits" ng-model="settings.units">
-                            <label for="daysUnits">Days</label>
-                            <input type="radio" name="units" value="hours" id="hoursUnits" ng-model="settings.units">
-                            <label for="hoursUnits">Hours</label>
-                            <input type="radio" name="units" value="minutes" id="minutesUnits" ng-model="settings.units">
-                            <label for="minutesUnits">Minutes</label>
-                            <input type="radio" name="units" value="seconds" id="secondsUnits" ng-model="settings.units">
-                            <label for="secondsUnits">Seconds</label>
-                        </div>
+                        <label for="preseasonGames">Preseason</label>                        
+                    </span>
+                    <span class="right unit-selector">
+                        <span 
+                            ng-repeat="(unit, unitDisplayName) in allUnits" 
+                            ng-click="onSelectUnit(unit)">
+                            
+                            <span ng-class="{selected: unit === settings.units}">{{unitDisplayName}}</span>
+                            <span ng-if="!$last"> | </span>
+                        </span>
                     </div>
                 </div>
             </div>

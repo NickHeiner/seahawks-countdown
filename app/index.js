@@ -22,6 +22,15 @@ angular.module("seahawks-countdown", ["foundation"]).controller("SeahawksCountdo
         units: "days"
     };
 
+    $scope.allUnits = {
+        days: "Days",
+        hours: "Hours",
+        minutes: "Minutes",
+        seconds: "Seconds",
+    };
+
+    $scope.onSelectUnit = unit => $scope.settings.units = unit;
+
     const updateOnce = _.once(updateTime);
 
     $scope.$watch("settings", () => {
